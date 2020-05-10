@@ -1,0 +1,48 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background: url('../imgs/silhouettes.gif') no-repeat center center fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: #1F3028;
+}
+
+a:hover {
+  color: orange;
+}
+
+#social {
+  margin-top: 10px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.menu li {
+  display: inline;
+  padding: 10px;
+  font-family: Lucida Fax;
+}
+
+.logo {
+  position:fixed;
+  left: 50%;
+  top:  50%;
+  /*
+      if, for instance, the image is 64x64 pixels,
+      then "move" it half its width/height to the
+      top/left by using negative margins
+  */
+  margin-left: -275px;
+  margin-top:  -275px;
+}
