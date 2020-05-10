@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
+
 * {
   padding: 0px;
   margin: 0px;
@@ -6,28 +8,31 @@
 html {
   width: 100%;
   height: 100%;
-  background: url('../imgs/silhouettes.gif') no-repeat center center fixed;
-  background-size: cover;
+  background: url(../imgs/silhouettes.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
 body {
   height: 100%;
+  font-family: 'Geo', sans-serif;
+  font-size: 1.25rem;
 }
 
 a {
-  text-decoration: none;
   color: #1F3028;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  transition: color 0.1s ease-in-out, border 0.2s ease-in-out;
 }
 
 a:hover {
-  color: orange;
+  color: black;
+  border-color: black;
 }
 
 #social {
-  display: inline-block;
   position: fixed;
   top: 15px;
   left: 10px;
@@ -45,10 +50,18 @@ a:hover {
 .menu li {
   display: inline;
   padding: 10px;
-  font-family: Lucida Fax;
 }
 
 .logo {
   max-width: 100%;
   max-height: 50%;
+  margin: auto 0;
+}
+
+.link--listen {
+  margin-bottom: 20px;
+}
+
+#soundcloud-embed {
+  font-size: 0; /* Removes visual space under iframe */
 }
