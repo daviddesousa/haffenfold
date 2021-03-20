@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>Haffenfold</title>
-    <link href="imgs/favicon.png" rel="shortcut icon">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <meta name="description" content="Always seeking both sides of the journey, through sounds and moments, Haffenfold are masters of the split image. Without their other half, they are left to fold. A clash of tastes is the catalyst to oscillation between bitter analog techno and mesmerizing progressions. A friendship born within the purest of interests, they set out to showcase the dancefloor odyssey in mirror opposites.">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#000000">
+    <link rel="preconnect" href="https://widget.sndcdn.com">
+    <link href="assets/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="social">
+    <nav>
       <ul class="menu">
+        <li>
+          <a href="https://www.beatport.com/artist/haffenfold/434331" rel="noreferrer" target="_blank">beatport</a>
+        </li>
         <li>
           <a href="https://soundcloud.com/haffenfold" rel="noreferrer" target="_blank">soundcloud</a>
         </li>
@@ -18,15 +30,18 @@
         <li>
           <a href="https://instagram.com/haffenfold" rel="noreferrer" target="_blank">instagram</a>
         </li>
+        <li>
+          <a href="mailto:haffenfold@gmail.com" rel="noreferrer" target="_blank">contact</a>
+        </li>
       </ul>
-    </div>
-    <div id="main">
-      <img alt="Haffenfold Logo" class="logo" src="imgs/logo.png"/>
-      <a href="#listen" class="scroll link--listen">listen</a>
-    </div>
-    <div id="listen" class="soundcloud-embed">
-      <iframe width="100%" height="475" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/778151880&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-    </div>
+    </nav>
+    <header>
+      <img class="logo" src="assets/logo.png" alt="Haffenfold Logo" />
+      <a class="scroll link--listen" href="#audio-player" title="Scroll to audio player">listen</a>
+    </header>
+    <main id="audio-player" class="soundcloud-embed">
+      <iframe width="100%" height="475" scrolling="no" frameborder="no" allow="autoplay" title="SoundCloud Web Player" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/778151880&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </main>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
