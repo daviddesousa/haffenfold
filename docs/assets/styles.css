@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400&display=swap');
 
 * {
   padding: 0;
@@ -8,7 +8,7 @@
 html {
   width: 100%;
   height: 100%;
-  background: #d39e67 url(../assets/haffenfold.jpg) no-repeat center center fixed;
+  background: #000 url(../assets/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -16,8 +16,8 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Geo', sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -46,11 +46,22 @@ header {
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin: 0 20px;
+  margin: 0 40px;
 }
 
 .menu li {
   display: inline-block;
+}
+
+.link--listen {
+  margin-top: auto;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.audio-embed {
+  font-size: 0; /* Removes visual space under iframe */
+  padding: 40px;
 }
 
 @media (max-width: 535px) {
@@ -67,26 +78,16 @@ header {
 
 @media (min-width: 536px) {
   nav {
-    left: 20px;
+    top: 30px;
+    left: 40px;
     right: auto;
   }
 
   .menu li:not(:first-child) {
-    margin-left: 20px;
+    margin-left: 25px;
   }
-}
 
-.logo {
-  max-width: 100%;
-  max-height: 50%;
-  margin: auto 0;
-  filter: invert(1);
-}
-
-.link--listen {
-  margin-bottom: 20px;
-}
-
-.soundcloud-embed {
-  font-size: 0; /* Removes visual space under iframe */
+  .audio-embed {
+    padding: 30px 40px;
+  }
 }
