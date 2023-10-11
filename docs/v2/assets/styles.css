@@ -56,6 +56,7 @@ header {
 .link--listen {
   margin-top: auto;
   margin-bottom: 20px;
+  color: #000;
 }
 
 .audio-embed {
@@ -89,34 +90,4 @@ header {
   .audio-embed {
     padding: 30px 40px;
   }
-}
-
-.link--listen::before {
-  content: '';
-  display: inline-block;
-  background-color: black;
-  left: 0;
-  right: 48%;
-  height: 100%;
-  position: absolute;
-}
-
-.link--listen::after {
-  content: '';
-  display: inline-block;
-  background-color: #f7f7f7;
-  height: 100%;
-  position: absolute;
-  left: 52%;
-  right: 0;
-  z-index: -1;
-}
-
-.link--listen {
-  position: relative;
-}
-
-.link--listen span {
-  color: white;
-  mix-blend-mode: difference;
 }
