@@ -36,8 +36,20 @@
       </ul>
     </nav>
     <header>
+      <button id="arcade-button" class="push-button push--flat no-select" aria-haspopup="dialog" aria-controls="arcade-dialog" aria-label="Open Bore popup">BORE</button>
       <a class="scroll link--listen" href="#audio-player" title="Scroll to audio player"><span style="color:#fff;">list</span>en</a>
     </header>
+    <dialog id="arcade-dialog" class="arcade-dialog" aria-label="BORE overlay">
+      <button id="arcade-close" class="dialog-close" aria-label="Close">
+        <span class="dialog-close-icon"><span>✕</span></span>
+      </button>
+      <div class="dialog-image-container">
+        <img class="bore-links-image" src="assets/haffenfold-bore-links.webp" alt="BORE download and stream links">
+        <a class="dialog-image-link link--beatport" target="_blank" title="Download Bore on Beatport" href="https://www.beatport.com/track/bore/24511043" rel="noopener noreferrer" autofocus><span class="sr-only">Beatport</span></a>
+        <a class="dialog-image-link link--spotify" target="_blank" title="Stream Bore on Spotify" href="https://open.spotify.com/album/6Pb3q5qNEqYVnQD4dciwrA" rel="noopener noreferrer"><span class="sr-only">Spotify</span></a>
+        <a class="dialog-image-link link--apple-music" target="_blank" title="Stream Bore on Apple Music" href="https://music.apple.com/us/album/bore/1880446302?i=1880446671" rel="noopener noreferrer"><span class="sr-only">Apple Music</span></a>
+      </div>
+    </dialog>
     <main id="audio-player" class="audio-embed">
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2b22KV07lFaJYxVmpdiCkq?utm_source=generator&theme=0" width="100%" height="470" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </main>
@@ -79,6 +91,41 @@
           }
         }, 100);
       }
+
+      (function() {
+        const arcadeBtn = document.getElementById('arcade-button');
+        const arcadeDialog = document.getElementById('arcade-dialog');
+        const arcadeClose = document.getElementById('arcade-close');
+
+        if (arcadeBtn && arcadeDialog) {
+          arcadeBtn.addEventListener('click', () => {
+            if (typeof arcadeDialog.showModal === 'function') {
+              arcadeDialog.showModal();
+            } else {
+              arcadeDialog.style.display = 'block';
+            }
+          });
+        }
+
+        function closeDialog() {
+          if (!arcadeDialog) return;
+          if (typeof arcadeDialog.close === 'function') {
+            arcadeDialog.close();
+          } else {
+            arcadeDialog.style.display = 'none';
+          }
+        }
+
+        if (arcadeClose) {
+          arcadeClose.addEventListener('click', closeDialog);
+        }
+
+        if (arcadeDialog) {
+          arcadeDialog.addEventListener('click', event => {
+            if (event.target === arcadeDialog) closeDialog();
+          });
+        }
+      })();
     </script>
   </body>
 </html>
