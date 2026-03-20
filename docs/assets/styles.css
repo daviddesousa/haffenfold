@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400,700&display=swap');
 
 * {
   padding: 0;
@@ -43,7 +43,7 @@ nav {
 header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 100%;
   margin: 0 40px;
@@ -54,41 +54,12 @@ header {
 }
 
 .link--listen {
-  margin-top: auto;
-  margin-bottom: 20px;
   color: #000;
 }
 
 .audio-embed {
   font-size: 0; /* Removes visual space under iframe */
   padding: 40px;
-}
-
-.arcade-btn {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: #000;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  border: 5px solid #fff;
-  box-shadow: 0 8px 0 #444, 0 12px 20px rgba(0,0,0,0.5);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.arcade-btn:active,
-.arcade-btn:focus-visible {
-  transform: translateY(4px);
-  box-shadow: 0 3px 0 #444, 0 8px 16px rgba(0,0,0,0.4);
-  outline: none;
 }
 
 .arcade-dialog {
@@ -148,4 +119,82 @@ header {
   .audio-embed {
     padding: 30px 40px;
   }
+}
+
+/* BORE BUTTON */
+.push-button {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 0;
+  margin: 1em;
+  outline: none;
+  background-color: #c0c0c0; /* Silver */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 200ms;
+  font-family: inherit;
+  font-weight: 700;
+  color: #000;
+}
+
+/* FLAT STYLE */
+.push--flat {
+  box-shadow:
+    inset 0 2.5px 0 #cccccc,
+    inset 0 -2.5px 0 #b3b3b3,
+    inset 0 0 0 2.5px #b8b8b8,
+    inset 0 0 0 6.66px #c0c0c0,
+    inset 0 0 0 8px #8c8c8c,
+    inset 0 0 0 8.69px #404040,
+    inset 0 0 0 10.66px rgba(255, 255, 255, 0.7),
+    inset 0 0 0 14.54px #c0c0c0,
+    inset 0 32px 10.66px #b3b3b3,
+    inset 0 0 8px 13.33px #a6a6a6,
+    0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.push--flat:after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 8px;
+  display: block;
+  width: 64px;
+  height: 64px;
+  border: 5.33px solid rgba(0, 0, 0, 0.3);
+  border-width: 0 0 5.33px;
+  border-radius: 50%;
+  transition-duration: 200ms;
+}
+
+.push--flat:hover,
+.push--flat:active,
+.push--flat.is-pushed {
+  box-shadow:
+    inset 0 2.5px 0 #cccccc,
+    inset 0 -2.5px 0 #b3b3b3,
+    inset 0 0 0 2.5px #b8b8b8,
+    inset 0 0 0 6.66px #c0c0c0,
+    inset 0 0 0 8px #8c8c8c,
+    inset 0 0 0 9.41px #666666,
+    inset 0 0 0 10.66px rgba(255, 255, 255, 0.2),
+    inset 0 0 0 14.54px #bababa,
+    inset 0 32px 10.66px #ababab,
+    inset 0 0 8px 13.33px #999999,
+    0 4px 0 rgba(0, 0, 0, 0.3);
+  background-color: #bababa;
+}
+
+.push--flat:active:after,
+.push--flat.is-pushed:after {
+  bottom: 9.33px;
+  border-width: 0;
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
