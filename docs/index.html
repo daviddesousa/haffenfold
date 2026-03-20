@@ -36,8 +36,13 @@
       </ul>
     </nav>
     <header>
+      <button id="arcade-button" class="arcade-btn" aria-haspopup="dialog" aria-controls="arcade-dialog" aria-label="Open Bore popup">BORE</button>
       <a class="scroll link--listen" href="#audio-player" title="Scroll to audio player"><span style="color:#fff;">list</span>en</a>
     </header>
+    <dialog id="arcade-dialog" class="arcade-dialog" aria-label="BORE overlay">
+      <button id="arcade-close" class="dialog-close" aria-label="Close">✕</button>
+      <iframe src="https://smrtlnk.app/to-be-discovered-6" title="BORE content" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </dialog>
     <main id="audio-player" class="audio-embed">
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2b22KV07lFaJYxVmpdiCkq?utm_source=generator&theme=0" width="100%" height="470" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </main>
@@ -79,6 +84,41 @@
           }
         }, 100);
       }
+
+      (function() {
+        const arcadeBtn = document.getElementById('arcade-button');
+        const arcadeDialog = document.getElementById('arcade-dialog');
+        const arcadeClose = document.getElementById('arcade-close');
+
+        if (arcadeBtn && arcadeDialog) {
+          arcadeBtn.addEventListener('click', () => {
+            if (typeof arcadeDialog.showModal === 'function') {
+              arcadeDialog.showModal();
+            } else {
+              arcadeDialog.style.display = 'block';
+            }
+          });
+        }
+
+        function closeDialog() {
+          if (!arcadeDialog) return;
+          if (typeof arcadeDialog.close === 'function') {
+            arcadeDialog.close();
+          } else {
+            arcadeDialog.style.display = 'none';
+          }
+        }
+
+        if (arcadeClose) {
+          arcadeClose.addEventListener('click', closeDialog);
+        }
+
+        if (arcadeDialog) {
+          arcadeDialog.addEventListener('click', event => {
+            if (event.target === arcadeDialog) closeDialog();
+          });
+        }
+      })();
     </script>
   </body>
 </html>

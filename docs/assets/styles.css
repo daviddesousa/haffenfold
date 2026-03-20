@@ -64,6 +64,64 @@ header {
   padding: 40px;
 }
 
+.arcade-btn {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 5px solid #fff;
+  box-shadow: 0 8px 0 #444, 0 12px 20px rgba(0,0,0,0.5);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.arcade-btn:active,
+.arcade-btn:focus-visible {
+  transform: translateY(4px);
+  box-shadow: 0 3px 0 #444, 0 8px 16px rgba(0,0,0,0.4);
+  outline: none;
+}
+
+.arcade-dialog {
+  width: min(90vw, 840px);
+  max-height: 90vh;
+  border: none;
+  border-radius: 18px;
+  padding: 12px;
+  background: rgba(0,0,0,0.9);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.75);
+}
+
+.arcade-dialog iframe {
+  width: 100%;
+  height: calc(90vh - 70px);
+  border: none;
+  border-radius: 12px;
+}
+
+.dialog-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 @media (max-width: 535px) {
   .menu {
     display: flex;
