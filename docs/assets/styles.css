@@ -59,7 +59,7 @@ header {
 
 .audio-embed {
   font-size: 0; /* Removes visual space under iframe */
-  padding: 40px;
+  padding: 16px;
 }
 
 .arcade-dialog {
@@ -133,6 +133,10 @@ header {
 
   .menu li {
     margin: 0 10px 10px;
+  }
+
+  .menu li.menu-link--facebook {
+    display: none;
   }
 }
 
